@@ -1,0 +1,81 @@
+id_aeroporto,codigo_iata,codigo_icao,nome,cidade,pais,latitude,longitude,hub_principal,criado_em,atualizado_em
+1,PDJ,SPDJ,Aeroporto Internacional de Carvalho de Goiás,Souza Verde,Brasil,25.006828,133.281854,True,2024-06-19 22:51:31.007101,2024-06-19 22:51:31.007101
+2,ZXO,SZXO,Aeroporto Internacional de Moraes,Borges de Sá,Brasil,-77.352295,-121.13257,True,2023-08-27 22:51:31.007691,2023-08-27 22:51:31.007691
+3,JOK,SJOK,Aeroporto Internacional de Peixoto de Minas,Garcia dos Dourados,Brasil,52.0330505,-45.023075,True,2024-10-09 22:51:31.007747,2025-11-25 22:51:31.007749
+4,JAR,SJAR,Aeroporto Internacional de Rodrigues,Vargas Alegre,Brasil,-60.0554415,-22.428319,True,2023-03-05 22:51:31.007789,2023-03-05 22:51:31.007789
+5,BKD,SBKD,Aeroporto Internacional de Silveira,Montenegro da Serra,Brasil,46.2797615,-122.871125,False,2024-01-01 22:51:31.007823,2024-01-01 22:51:31.007823
+6,OTO,SOTO,Aeroporto Internacional de Cassiano,Teixeira da Serra,Brasil,54.788454,104.731459,True,2023-08-07 22:51:31.007863,2023-08-07 22:51:31.007863
+7,AMU,SAMU,Aeroporto Internacional de Almeida de Camargo,das Neves de Goiás,Brasil,-74.4508305,-50.683051,False,2023-03-05 22:51:31.007911,2023-03-05 22:51:31.007911
+8,KFF,SKFF,Aeroporto Internacional de Azevedo de Teixeira,Cardoso,Brasil,87.1005125,75.165283,False,2023-04-14 22:51:31.007969,2023-04-14 22:51:31.007969
+9,JKQ,SJKQ,Aeroporto Internacional de Cunha da Prata,Silva,Brasil,-6.3242945,34.207359,True,2023-11-11 22:51:31.008008,2025-11-25 22:51:31.008010
+10,QPX,SQPX,Aeroporto Internacional de Moreira de Machado,da Cruz,Brasil,-29.6832675,-145.626357,True,2024-05-05 22:51:31.008041,2024-05-05 22:51:31.008041
+11,VBL,SVBL,Aeroporto Internacional de Pastor,Abreu,Brasil,-70.942939,158.820822,False,2023-08-29 22:51:31.008074,2023-08-29 22:51:31.008074
+12,DOE,SDOE,Aeroporto Internacional de Farias,Moraes,Brasil,-26.1111175,-30.493657,True,2023-04-16 22:51:31.008101,2023-04-16 22:51:31.008101
+13,QFN,SQFN,Aeroporto Internacional de Silveira,da Cruz de Viana,Brasil,36.962706,38.538654,True,2024-08-26 22:51:31.008129,2024-08-26 22:51:31.008129
+14,MGG,SMGG,Aeroporto Internacional de Fogaça das Pedras,Martins do Norte,Brasil,85.4106205,166.915112,True,2023-07-27 22:51:31.008159,2023-07-27 22:51:31.008159
+15,GDZ,SGDZ,Aeroporto Internacional de Caldeira de Goiás,Correia,Brasil,53.95811,60.847567,True,2023-05-27 22:51:31.008192,2023-05-27 22:51:31.008192
+16,IBL,SIBL,Aeroporto Internacional de Martins de Goiás,Macedo,Brasil,57.726826,-127.435652,False,2024-10-07 22:51:31.008221,2024-10-07 22:51:31.008221
+17,DPI,SDPI,Aeroporto Internacional de Borges,Cavalcante,Brasil,19.0959435,80.726594,True,2024-05-29 22:51:31.008249,2025-11-25 22:51:31.008250
+18,ENZ,SENZ,Aeroporto Internacional de Cavalcante,Abreu das Flores,Brasil,-18.8100965,64.280759,True,2024-11-03 22:51:31.008274,2024-11-03 22:51:31.008274
+19,SBS,SSBS,Aeroporto Internacional de Cassiano de Correia,Cunha do Norte,Brasil,65.472524,111.088834,True,2023-08-03 22:51:31.008303,2023-08-03 22:51:31.008303
+20,DVU,SDVU,Aeroporto Internacional de Aragão,Montenegro de Moura,Brasil,-47.739474,-149.463012,True,2023-03-26 22:51:31.008332,2023-03-26 22:51:31.008332
+21,GFL,SGFL,Aeroporto Internacional de Peixoto,Rocha,Brasil,-26.862935,36.775349,False,2024-05-03 22:51:31.008369,2024-05-03 22:51:31.008369
+22,HKP,SHKP,Aeroporto Internacional de Pinto,Leão,Brasil,86.462265,133.356673,True,2024-06-27 22:51:31.008396,2024-06-27 22:51:31.008396
+23,KHU,SKHU,Aeroporto Internacional de Costela Alegre,da Luz,Brasil,16.242954,-109.73526,False,2024-03-16 22:51:31.008422,2024-03-16 22:51:31.008422
+24,QPT,SQPT,Aeroporto Internacional de Dias de Sá,Albuquerque,Brasil,33.020082,153.482333,False,2023-11-08 22:51:31.008448,2023-11-08 22:51:31.008448
+25,KGE,SKGE,Aeroporto Internacional de Montenegro,Cardoso da Praia,Brasil,-71.533974,-48.850804,True,2024-09-28 22:51:31.008475,2024-09-28 22:51:31.008475
+26,XSK,SXSK,Aeroporto Internacional de Nogueira de Santos,Pimenta do Galho,Brasil,-87.900001,178.556326,True,2024-02-18 22:51:31.008502,2025-11-25 22:51:31.008503
+27,JTQ,SJTQ,Aeroporto Internacional de Carvalho,Camargo do Campo,Brasil,58.504841,-96.544539,True,2023-06-07 22:51:31.008532,2023-06-07 22:51:31.008532
+28,RSM,SRSM,Aeroporto Internacional de Silva,Costela Paulista,Brasil,45.669711,82.27854,True,2023-04-24 22:51:31.008558,2025-11-25 22:51:31.008559
+29,QDF,SQDF,Aeroporto Internacional de da Mota do Norte,Farias,Brasil,-54.883366,162.047638,True,2024-12-28 22:51:31.008639,2024-12-28 22:51:31.008639
+30,QKV,SQKV,Aeroporto Internacional de Novaes de Santos,Novais do Sul,Brasil,-59.9690835,-139.603764,False,2023-08-22 22:51:31.008767,2023-08-22 22:51:31.008767
+31,SJI,SSJI,Aeroporto Internacional de Freitas,Lopes,Brasil,-55.789104,-157.543301,False,2024-06-24 22:51:31.008809,2024-06-24 22:51:31.008809
+32,TXY,STXY,Aeroporto Internacional de Fogaça,Rodrigues,Brasil,-23.017372,178.057151,False,2024-05-26 22:51:31.008838,2024-05-26 22:51:31.008838
+33,GWX,SGWX,Aeroporto Internacional de Pinto Grande,Castro,Brasil,-42.472867,41.348877,False,2024-07-19 22:51:31.008866,2025-11-25 22:51:31.008867
+34,BLV,SBLV,Aeroporto Internacional de Viana das Pedras,da Mata,Brasil,-47.265655,-121.966604,False,2024-02-02 22:51:31.008897,2024-02-02 22:51:31.008897
+35,YCE,SYCE,Aeroporto Internacional de Costa,Ferreira de das Neves,Brasil,-28.9053005,-60.31883,True,2024-12-05 22:51:31.008927,2024-12-05 22:51:31.008927
+36,BQM,SBQM,Aeroporto Internacional de Farias Paulista,Vargas,Brasil,-15.0729545,8.520142,False,2024-11-28 22:51:31.008956,2024-11-28 22:51:31.008956
+37,PGZ,SPGZ,Aeroporto Internacional de Alves do Campo,Cavalcanti Verde,Brasil,-18.739416,-159.460824,True,2024-10-10 22:51:31.008983,2024-10-10 22:51:31.008983
+38,GMB,SGMB,Aeroporto Internacional de Siqueira Alegre,Pereira do Galho,Brasil,-58.9565705,26.80022,False,2023-07-30 22:51:31.009013,2023-07-30 22:51:31.009013
+39,KMQ,SKMQ,Aeroporto Internacional de Santos,Abreu do Galho,Brasil,54.5396065,-74.217569,True,2024-07-26 22:51:31.009042,2024-07-26 22:51:31.009042
+40,XBE,SXBE,Aeroporto Internacional de Pinto Alegre,Silveira,Brasil,-9.382855,92.259323,True,2024-11-13 22:51:31.009071,2024-11-13 22:51:31.009071
+41,TQA,STQA,Aeroporto Internacional de Guerra da Mata,Correia,Brasil,22.8627035,176.981268,True,2024-12-09 22:51:31.009098,2024-12-09 22:51:31.009098
+42,YRV,SYRV,Aeroporto Internacional de Pimenta,Guerra da Prata,Brasil,-89.8910315,-16.858378,True,2024-10-26 22:51:31.009126,2024-10-26 22:51:31.009126
+43,SNB,SSNB,Aeroporto Internacional de Martins dos Dourados,Rocha de Cunha,Brasil,47.2172245,74.039896,False,2024-08-12 22:51:31.009152,2024-08-12 22:51:31.009152
+44,YYV,SYYV,Aeroporto Internacional de Ribeiro,da Paz,Brasil,48.3655945,176.403814,True,2024-06-25 22:51:31.009298,2024-06-25 22:51:31.009298
+45,ONV,SONV,Aeroporto Internacional de Sá,Rocha,Brasil,-6.67241,-59.396961,False,2024-08-14 22:51:31.009327,2024-08-14 22:51:31.009327
+46,ZMJ,SZMJ,Aeroporto Internacional de Aparecida,Melo,Brasil,74.087607,-140.900642,False,2024-05-03 22:51:31.009352,2024-05-03 22:51:31.009352
+47,DAO,SDAO,Aeroporto Internacional de Silva,Monteiro das Flores,Brasil,-24.505925,-100.77324,False,2024-04-12 22:51:31.009379,2024-04-12 22:51:31.009379
+48,PSA,SPSA,Aeroporto Internacional de Vasconcelos,Câmara da Serra,Brasil,49.038225,69.403322,True,2024-08-24 22:51:31.009405,2025-11-25 22:51:31.009407
+49,DJP,SDJP,Aeroporto Internacional de Marques,Martins,Brasil,89.201532,105.149257,True,2024-12-01 22:51:31.009433,2024-12-01 22:51:31.009433
+50,JMU,SJMU,Aeroporto Internacional de Pimenta de Silveira,Novaes dos Dourados,Brasil,-47.2763755,74.838897,False,2024-03-14 22:51:31.009457,2025-11-25 22:51:31.009458
+51,CQW,SCQW,Aeroporto Internacional de Porto,Vargas do Galho,Brasil,40.0830215,156.483005,True,2023-09-03 22:51:31.009500,2023-09-03 22:51:31.009500
+52,PRC,SPRC,Aeroporto Internacional de Silva,da Costa Paulista,Brasil,0.1533875,-8.357236,True,2024-12-02 22:51:31.009528,2024-12-02 22:51:31.009528
+53,IFI,SIFI,Aeroporto Internacional de da Conceição,Sales Grande,Brasil,-32.5674615,-145.517398,True,2024-07-23 22:51:31.009554,2025-11-25 22:51:31.009555
+54,AAV,SAAV,Aeroporto Internacional de Leão de Araújo,Leão,Brasil,14.5493845,133.575246,False,2023-03-10 22:51:31.009584,2023-03-10 22:51:31.009584
+55,SBW,SSBW,Aeroporto Internacional de Mendes do Sul,da Rosa das Flores,Brasil,22.4801685,108.954965,True,2024-09-29 22:51:31.009612,2024-09-29 22:51:31.009612
+56,VVI,SVVI,Aeroporto Internacional de Mendonça,da Mata,Brasil,26.9938295,80.727063,True,2023-06-17 22:51:31.009640,2023-06-17 22:51:31.009640
+57,BYV,SBYV,Aeroporto Internacional de Silveira da Serra,Cardoso de Pinto,Brasil,53.3777215,-165.522497,False,2023-11-27 22:51:31.009664,2023-11-27 22:51:31.009664
+58,ZLK,SZLK,Aeroporto Internacional de Barros,Carvalho dos Dourados,Brasil,-41.217486,-153.003643,False,2024-05-07 22:51:31.009693,2024-05-07 22:51:31.009693
+59,QYU,SQYU,Aeroporto Internacional de Marques,Fernandes das Flores,Brasil,-15.3060585,46.325894,True,2024-05-30 22:51:31.009720,2024-05-30 22:51:31.009720
+60,QFE,SQFE,Aeroporto Internacional de Souza,Ferreira,Brasil,-29.810822,169.043454,False,2023-03-14 22:51:31.009746,2023-03-14 22:51:31.009746
+61,EXP,SEXP,Aeroporto Internacional de Sá,da Cruz,Brasil,-36.484525,-169.058562,True,2024-03-12 22:51:31.009770,2024-03-12 22:51:31.009770
+62,NJP,SNJP,Aeroporto Internacional de Melo,Nunes,Brasil,-31.4905885,69.663219,True,2025-01-20 22:51:31.009796,2025-01-20 22:51:31.009796
+63,SQX,SSQX,Aeroporto Internacional de Cavalcante do Campo,das Neves,Brasil,-60.982463,130.679002,False,2024-11-15 22:51:31.009820,2024-11-15 22:51:31.009820
+64,BTK,SBTK,Aeroporto Internacional de Gonçalves do Oeste,Pastor,Brasil,78.3740985,-49.62123,True,2024-09-16 22:51:31.009846,2024-09-16 22:51:31.009846
+65,GSX,SGSX,Aeroporto Internacional de Rodrigues do Campo,Ferreira,Brasil,53.0077135,49.983693,True,2024-05-24 22:51:31.009874,2024-05-24 22:51:31.009874
+66,QXE,SQXE,Aeroporto Internacional de Albuquerque das Pedras,Caldeira de Lopes,Brasil,7.2241105,161.227155,False,2023-11-08 22:51:31.009900,2023-11-08 22:51:31.009900
+67,DTJ,SDTJ,Aeroporto Internacional de Cavalcanti do Galho,Pimenta da Prata,Brasil,39.7878735,69.577207,True,2023-05-14 22:51:31.009928,2023-05-14 22:51:31.009928
+68,BUL,SBUL,Aeroporto Internacional de Duarte de Goiás,da Mota,Brasil,31.0112405,-49.076815,False,2023-03-18 22:51:31.009956,2023-03-18 22:51:31.009956
+69,WDK,SWDK,Aeroporto Internacional de Fernandes do Sul,Duarte de Cirino,Brasil,40.8756895,-66.119024,True,2023-03-22 22:51:31.009981,2025-11-25 22:51:31.009982
+70,WZQ,SWZQ,Aeroporto Internacional de da Mota Paulista,Moreira,Brasil,-38.713681,-134.036892,True,2024-05-04 22:51:31.010008,2025-11-25 22:51:31.010009
+71,PUA,SPUA,Aeroporto Internacional de Novais de Teixeira,Sales,Brasil,37.8002705,166.766476,False,2023-07-13 22:51:31.010036,2025-11-25 22:51:31.010037
+72,TFC,STFC,Aeroporto Internacional de Borges,Câmara das Flores,Brasil,-24.688268,-15.606889,False,2023-05-21 22:51:31.010061,2023-05-21 22:51:31.010061
+73,QLX,SQLX,Aeroporto Internacional de Novaes de Moura,Lima da Prata,Brasil,-1.2038865,8.876837,False,2024-07-05 22:51:31.010088,2024-07-05 22:51:31.010088
+74,SDR,SSDR,Aeroporto Internacional de da Cunha de Goiás,Silveira,Brasil,-38.303548,-10.591488,True,2023-08-31 22:51:31.010115,2023-08-31 22:51:31.010115
+75,HVI,SHVI,Aeroporto Internacional de Correia,Sousa,Brasil,39.976068,-31.555393,False,2024-10-27 22:51:31.010140,2024-10-27 22:51:31.010140
+76,ULW,SULW,Aeroporto Internacional de Brito do Oeste,da Conceição da Praia,Brasil,-41.831527,-17.721321,True,2024-12-15 22:51:31.010163,2025-11-25 22:51:31.010164
+77,ATI,SATI,Aeroporto Internacional de da Mota,Aragão,Brasil,58.541166,-23.160335,True,2023-04-18 22:51:31.010195,2023-04-18 22:51:31.010195
+78,SIO,SSIO,Aeroporto Internacional de Caldeira de Albuquerque,Melo do Amparo,Brasil,28.2374435,2.915107,False,2023-11-04 22:51:31.010222,2023-11-04 22:51:31.010222
+79,LDQ,SLDQ,Aeroporto Internacional de Camargo de Azevedo,Mendonça de Minas,Brasil,64.892936,157.931089,True,2023-07-05 22:51:31.010250,2025-11-25 22:51:31.010251
+80,RDJ,SRDJ,Aeroporto Internacional de Nunes,Barros de Goiás,Brasil,-58.203401,119.613177,False,2024-08-30 22:51:31.010277,2024-08-30 22:51:31.010277
