@@ -53,15 +53,14 @@ def carregar_valores_existentes(engine):
                 pass
 
 # ===========================================================
-#  FUNÇÕES GERADORAS — GARANTEM UNICIDADE
+#  FUNÇÕES GERADORAS — SEM CAMPOS DE AUDITORIA
 # ===========================================================
 
 def gerar_companhias_aereas(qtd):
     iatas = usados["iata"]
     icaos = usados["icao"]
 
-    novos_iata = []
-    novos_icao = []
+    novos_iata, novos_icao = [], []
 
     while len(novos_iata) < qtd:
         iata = fake.lexify("??").upper()
@@ -80,10 +79,7 @@ def gerar_companhias_aereas(qtd):
         "codigo_iata": novos_iata,
         "codigo_icao": novos_icao,
         "pais": [fake.country() for _ in range(qtd)],
-        "alianca": [
-            random.choice(["Star Alliance", "SkyTeam", "OneWorld", None])
-            for _ in range(qtd)
-        ],
+        "alianca": [random.choice(["Star Alliance", "SkyTeam", "OneWorld", None]) for _ in range(qtd)],
         "ativo": True
     })
 
@@ -165,6 +161,7 @@ def gen_clientes():
         "telefone": fake.phone_number(),
         "pais": fake.country()
     }
+
 
 def gen_voos(ids_companhias, ids_aeronaves, ids_aeroportos):
     origem, destino = random.sample(ids_aeroportos, 2)
@@ -261,80 +258,49 @@ def gerar_dados(quantidades, pg_url):
 
     carregar_valores_existentes(engine)
 
-    # 1. companhias
-    qtd = quantidades["companhias_aereas"]
-    df = gerar_companhias_aereas(qtd)
-    inserir_dataframe(engine, "companhias_aereas", df)
-    ids_companhias = pd.read_sql("SELECT id FROM aviacao.companhias_aereas", engine)["id"].tolist()
+    tabelas = [
+        ("companhias_aereas", lambda: gerar_companhias_aereas(quantidades["companhias_aereas"])),
+        ("modelos_avioes", lambda: pd.DataFrame([gen_modelos_avioes(ids_companhias) for _ in range(quantidades["modelos_avioes"])])),
+        ("aeroportos", lambda: pd.DataFrame([gen_aeroportos() for _ in range(quantidades["aeroportos"])])),
+        ("aeronaves", lambda: pd.DataFrame([gen_aeronaves(ids_companhias, ids_modelos) for _ in range(quantidades["aeronaves"])])),
+        ("funcionarios", lambda: pd.DataFrame([gen_funcionarios(ids_companhias) for _ in range(quantidades["funcionarios"])])),
+        ("clientes", lambda: pd.DataFrame([gen_clientes() for _ in range(quantidades["clientes"])])),
+        ("voos", lambda: pd.DataFrame([gen_voos(ids_companhias, ids_aeronaves, ids_aeroportos) for _ in range(quantidades["voos"])])),
+        ("reservas", lambda: pd.DataFrame([gen_reservas(ids_clientes, ids_voos) for _ in range(quantidades["reservas"])])),
+        ("bilhetes", lambda: pd.DataFrame([gen_bilhetes(ids_reservas) for _ in range(quantidades["bilhetes"])])),
+        ("bagagens", lambda: pd.DataFrame([gen_bagagens(ids_bilhetes) for _ in range(quantidades["bagagens"])])),
+        ("manutencoes", lambda: pd.DataFrame([gen_manutencoes(ids_aeronaves) for _ in range(quantidades["manutencoes"])])),
+        ("tripulacao_voo", lambda: pd.DataFrame([gen_tripulacao_voo(ids_voos, ids_funcionarios) for _ in range(quantidades["tripulacao_voo"])])),
+    ]
 
-    # 2. modelos
-    qtd = quantidades["modelos_avioes"]
-    df = pd.DataFrame([gen_modelos_avioes(ids_companhias) for _ in range(qtd)])
-    inserir_dataframe(engine, "modelos_avioes", df)
-    ids_modelos = pd.read_sql("SELECT id FROM aviacao.modelos_avioes", engine)["id"].tolist()
+    for nome_tabela, fn in tabelas:
+        print(f"➡ Inserindo {nome_tabela}...")
+        df = fn()
+        inserir_dataframe(engine, nome_tabela, df)
 
-    # 3. aeroportos
-    qtd = quantidades["aeroportos"]
-    df = pd.DataFrame([gen_aeroportos() for _ in range(qtd)])
-    inserir_dataframe(engine, "aeroportos", df)
-    ids_aeroportos = pd.read_sql("SELECT id FROM aviacao.aeroportos", engine)["id"].tolist()
-
-    # 4. aeronaves
-    qtd = quantidades["aeronaves"]
-    df = pd.DataFrame([gen_aeronaves(ids_companhias, ids_modelos) for _ in range(qtd)])
-    inserir_dataframe(engine, "aeronaves", df)
-    ids_aeronaves = pd.read_sql("SELECT id FROM aviacao.aeronaves", engine)["id"].tolist()
-
-    # 5. funcionários
-    qtd = quantidades["funcionarios"]
-    df = pd.DataFrame([gen_funcionarios(ids_companhias) for _ in range(qtd)])
-    inserir_dataframe(engine, "funcionarios", df)
-    ids_funcionarios = pd.read_sql("SELECT id FROM aviacao.funcionarios", engine)["id"].tolist()
-
-    # 6. clientes
-    qtd = quantidades["clientes"]
-    df = pd.DataFrame([gen_clientes() for _ in range(qtd)])
-    inserir_dataframe(engine, "clientes", df)
-    ids_clientes = pd.read_sql("SELECT id FROM aviacao.clientes", engine)["id"].tolist()
-
-    # 7. voos
-    qtd = quantidades["voos"]
-    df = pd.DataFrame([gen_voos(ids_companhias, ids_aeronaves, ids_aeroportos) for _ in range(qtd)])
-    inserir_dataframe(engine, "voos", df)
-    ids_voos = pd.read_sql("SELECT id FROM aviacao.voos", engine)["id"].tolist()
-
-    # 8. reservas
-    qtd = quantidades["reservas"]
-    df = pd.DataFrame([gen_reservas(ids_clientes, ids_voos) for _ in range(qtd)])
-    inserir_dataframe(engine, "reservas", df)
-    ids_reservas = pd.read_sql("SELECT id FROM aviacao.reservas", engine)["id"].tolist()
-
-    # 9. bilhetes
-    qtd = quantidades["bilhetes"]
-    df = pd.DataFrame([gen_bilhetes(ids_reservas) for _ in range(qtd)])
-    inserir_dataframe(engine, "bilhetes", df)
-    ids_bilhetes = pd.read_sql("SELECT id FROM aviacao.bilhetes", engine)["id"].tolist()
-
-    # 10. bagagens
-    qtd = quantidades["bagagens"]
-    df = pd.DataFrame([gen_bagagens(ids_bilhetes) for _ in range(qtd)])
-    inserir_dataframe(engine, "bagagens", df)
-
-    # 11. manutenção
-    qtd = quantidades["manutencoes"]
-    df = pd.DataFrame([gen_manutencoes(ids_aeronaves) for _ in range(qtd)])
-    inserir_dataframe(engine, "manutencoes", df)
-
-    # 12. tripulação
-    qtd = quantidades["tripulacao_voo"]
-    df = pd.DataFrame([gen_tripulacao_voo(ids_voos, ids_funcionarios) for _ in range(qtd)])
-    inserir_dataframe(engine, "tripulacao_voo", df)
+        if nome_tabela == "companhias_aereas":
+            ids_companhias = pd.read_sql("SELECT id FROM aviacao.companhias_aereas", engine)["id"].tolist()
+        if nome_tabela == "modelos_avioes":
+            ids_modelos = pd.read_sql("SELECT id FROM aviacao.modelos_avioes", engine)["id"].tolist()
+        if nome_tabela == "aeroportos":
+            ids_aeroportos = pd.read_sql("SELECT id FROM aviacao.aeroportos", engine)["id"].tolist()
+        if nome_tabela == "aeronaves":
+            ids_aeronaves = pd.read_sql("SELECT id FROM aviacao.aeronaves", engine)["id"].tolist()
+        if nome_tabela == "funcionarios":
+            ids_funcionarios = pd.read_sql("SELECT id FROM aviacao.funcionarios", engine)["id"].tolist()
+        if nome_tabela == "clientes":
+            ids_clientes = pd.read_sql("SELECT id FROM aviacao.clientes", engine)["id"].tolist()
+        if nome_tabela == "voos":
+            ids_voos = pd.read_sql("SELECT id FROM aviacao.voos", engine)["id"].tolist()
+        if nome_tabela == "reservas":
+            ids_reservas = pd.read_sql("SELECT id FROM aviacao.reservas", engine)["id"].tolist()
+        if nome_tabela == "bilhetes":
+            ids_bilhetes = pd.read_sql("SELECT id FROM aviacao.bilhetes", engine)["id"].tolist()
 
     print("\n✔ Dados gerados com sucesso!")
 
-
 # ===========================================================
-#  EXECUÇÃO DO SCRIPT
+#  EXECUÇÃO
 # ===========================================================
 
 if __name__ == "__main__":
