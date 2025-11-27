@@ -1,8 +1,8 @@
-# SkyData Analytics - Engenharia de Dados
+# SkyData - Ingestion Pipeline
 
-![Python](https://img.shields.io/badge/Python-3.13-blue) ![Spark](https://img.shields.io/badge/Apache%20Spark-3.5-orange) ![Databricks](https://img.shields.io/badge/Databricks-Runtime-red) ![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow)
+![Python](https://img.shields.io/badge/Python-3.13-blue) ![Spark](https://img.shields.io/badge/Apache%20Spark-3.5-orange) ![Databricks](https://img.shields.io/badge/Databricks-Lakehouse-red)
 
-Repositório oficial do Trabalho Final de Engenharia de Dados. Este projeto implementa um pipeline de dados completo (E2E) utilizando arquitetura Lakehouse no Databricks, com foco em ingestão incremental, qualidade de dados e modelagem dimensional (SCD Tipo 2).
+Implementação do pipeline de ingestão de dados (End-to-End Ingestion) para o projeto de aviação. Este repositório contém a infraestrutura de dados, geradores de massa de teste e os pipelines ETL para as camadas Landing e Bronze.
 
 Criadores:
 Vinicius Lummertz
@@ -12,14 +12,12 @@ João Acordi
 Victor
 Lucas Guidi
 
-## 🏗 Arquitetura do Projeto
+## 🏗 Arquitetura Implementada
 
-O projeto segue a **Medallion Architecture** (Bronze, Silver, Gold) orchestrada via Databricks Workflows/Notebooks.
+O projeto foca na captura eficiente de dados transacionais e sua persistência em Delta Lake.
 
 ```mermaid
 graph LR
-    A[PostgreSQL<br/>(Transactional)] -->|JDBC Incremental| B(Landing Zone<br/>CSV Files)
-    B -->|Spark Autoloader| C[(Bronze Layer<br/>Delta Lake)]
-    C -->|Transformation| D[(Silver Layer<br/>Delta Lake)]
-    D -->|SCD Type 2| E[(Gold Layer<br/>Star Schema)]
-    E -->|API/Connector| F[Dashboard Analytics]
+    A[PostgreSQL<br/>(Source)] -->|JDBC Incremental<br/>Watermark| B(Landing Zone<br/>CSV / Volumes)
+    B -->|Spark Batch Processing| C[(Bronze Layer<br/>Delta Lake)]
+    C -->|Ready for| D[Silver/Gold Teams]

@@ -1,29 +1,25 @@
-# Como Funciona (Visão Geral)
+# Arquitetura de Ingestão
 
-Para garantir que os dados cheguem com qualidade ao dashboard, utilizamos uma arquitetura de "Medalhão" (Medallion Architecture). Imagine uma linha de produção industrial:
+Nossa arquitetura foi desenhada para robustez. O fluxo segue o padrão de ingestão em dois estágios (Landing Zone e Bronze Layer).
 
-## 1. A Fonte (Origem)
-Nossos dados nascem em um banco de dados transacional (PostgreSQL) que simula a operação dia-a-dia: vendas de passagens, decolagens e registros de manutenção.
-* **Desafio:** O banco operacional não pode parar.
-* **Solução:** Nossa engenharia lê apenas o que mudou (Carga Incremental) sem travar o sistema.
+## 1. Fonte de Dados (Simulador)
+Utilizamos um banco **PostgreSQL** populado via script Python (`Faker`).
+* **Diferencial:** As tabelas possuem colunas de auditoria (`AUD_DH_CRIACAO`, `AUD_DH_ALTERACAO`).
+* **Importância:** Isso nos permite saber exatamente *quando* um dado foi criado ou modificado.
 
-## 2. Camada Bronze (Matéria-Prima)
-É onde os dados chegam "brutos".
-* Recebemos os dados em formato CSV e convertemos para um formato otimizado e seguro (Delta Lake).
-* Garantimos que nenhum dado se perca no caminho.
+## 2. Pipeline de Landing (Ingestão)
+O notebook de Landing conecta no banco via JDBC e aplica uma estratégia de **Watermark**.
+* **Como funciona:** O sistema memoriza a data da última execução.
+* **Ação:** Na próxima execução, ele pede ao banco apenas: *"Me dê tudo que mudou depois dessa data"*.
+* **Saída:** Arquivos CSV salvos na camada de Landing (Volumes do Databricks), organizados por `batch_id`.
 
-## 3. Camada Silver (Refinaria)
-Aqui ocorre a limpeza.
-* Removemos duplicatas.
-* Corrigimos formatos de datas e tipagem.
-* Padronizamos nomes (Ex: transformar "SP" e "S. Paulo" em "São Paulo").
+## 3. Pipeline Bronze (Consolidação)
+O notebook Bronze processa os arquivos CSV e os transforma em tabelas **Delta Lake**.
+* **Estratégia:** Utilizamos `MERGE INTO` (Upsert).
+* **Lógica:** Se o registro já existe na Bronze, ele é atualizado. Se é novo, é inserido.
+* **Rastreabilidade:** Adicionamos colunas de metadados (`bronze_batch_id`, `bronze_load_ts`) para saber a origem exata de cada linha.
 
-## 4. Camada Gold (Produto Final)
-É a camada de Negócio.
-* Aqui aplicamos as regras complexas, como o **SCD Tipo 2** (rastrear histórico de mudanças).
-* Os dados são modelados em formato de "Estrela" (Fatos e Dimensões) para alimentar o Dashboard de forma rápida.
-
-## Tecnologias Utilizadas
-* **Apache Spark:** O motor que processa grandes volumes de dados.
-* **Databricks:** A plataforma unificada onde tudo acontece.
-* **Delta Lake:** A tecnologia que traz confiabilidade para o Data Lake.
+## Tecnologias
+* **Python & SQL:** Linguagens principais.
+* **Apache Spark:** Processamento distribuído.
+* **Delta Lake:** Formato de armazenamento confiável.
