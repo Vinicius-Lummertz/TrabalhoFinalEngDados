@@ -1,0 +1,9 @@
+# Manipulação de Dados e Geração (scripts/gerador_dados.py)
+Faker>=20.0.0
+pandas>=2.0.0
+SQLAlchemy>=2.0.0
+psycopg2-binary>=2.9.0  # Necessário para conexão com PostgreSQL
+
+# Processamento Big Data e Lakehouse (src/pipeline/*.ipynb)
+pyspark>=3.5.0
+delta-spark>=3.0.0      # Para usar delta.tables (DeltaTable)
