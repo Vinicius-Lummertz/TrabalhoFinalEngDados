@@ -1,9 +1,0 @@
-id_companhia,codigo_iata,codigo_icao,nome_fantasia,razao_social,pais_sede,criado_em,atualizado_em
-1,LA,LAX,Latam Airlines,Latam Airlines S.A.,Brasil,2025-06-21 22:51:30.986008,2025-06-21 22:51:30.986008
-2,AD,ADX,Azul Linhas Aéreas,Azul Linhas Aéreas S.A.,Brasil,2025-08-05 22:51:30.986025,2025-08-05 22:51:30.986025
-3,G3,G3X,Gol Linhas Aéreas,Gol Linhas Aéreas S.A.,Brasil,2025-03-30 22:51:30.986031,2025-03-30 22:51:30.986031
-4,TP,TPX,TAP Air Portugal,TAP Air Portugal S.A.,Exterior,2025-04-14 22:51:30.986036,2025-04-14 22:51:30.986036
-5,AA,AAX,American Airlines,American Airlines S.A.,Exterior,2025-04-25 22:51:30.986040,2025-04-25 22:51:30.986040
-6,AF,AFX,Air France,Air France S.A.,Exterior,2025-06-07 22:51:30.986043,2025-06-07 22:51:30.986043
-7,LH,LHX,Lufthansa,Lufthansa S.A.,Exterior,2025-06-26 22:51:30.986047,2025-06-26 22:51:30.986047
-8,EK,EKX,Emirates,Emirates S.A.,Exterior,2025-07-04 22:51:30.986050,2025-07-04 22:51:30.986050
